@@ -80,6 +80,56 @@ themeToggle?.addEventListener('click', () => {
     localStorage.setItem('theme', nextTheme)
 })
 
+/*===== PROJECT IMAGE LIGHTBOX =====*/
+const lightbox = document.getElementById('lightbox')
+const lightboxImage = lightbox?.querySelector('.lightbox__image')
+const lightboxTriggers = document.querySelectorAll('.work__preview')
+const closeButtons = document.querySelectorAll('[data-close-lightbox]')
+
+const openLightbox = (src, alt) => {
+    if (!lightbox || !lightboxImage) return
+
+    lightboxImage.src = src
+    lightboxImage.alt = alt
+    lightbox.classList.add('is-open')
+    lightbox.setAttribute('aria-hidden', 'false')
+    document.body.style.overflow = 'hidden'
+}
+
+const closeLightbox = () => {
+    if (!lightbox || !lightboxImage) return
+
+    lightbox.classList.remove('is-open')
+    lightbox.setAttribute('aria-hidden', 'true')
+    document.body.style.overflow = ''
+    lightboxImage.removeAttribute('src')
+    lightboxImage.alt = ''
+}
+
+lightboxTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+        const src = trigger.getAttribute('data-lightbox-src')
+        const alt = trigger.getAttribute('data-lightbox-alt')
+        if (src) openLightbox(src, alt || '')
+    })
+})
+
+closeButtons.forEach((button) => {
+    button.addEventListener('click', closeLightbox)
+})
+
+lightbox?.addEventListener('click', (event) => {
+    if (event.target === lightbox || event.target.matches('[data-close-lightbox]')) {
+        closeLightbox()
+    }
+})
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox?.classList.contains('is-open')) {
+        closeLightbox()
+    }
+})
+
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: 'top',
