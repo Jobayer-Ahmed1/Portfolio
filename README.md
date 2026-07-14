@@ -4,7 +4,7 @@ Welcome to my personal portfolio website! This portfolio showcases my skills, pr
 
 ## 🚀 Live Demo
 
-🔗https://jobayer-ahmed1.github.io/portfolio/](https://jobayer-ahmed1.github.io/Portfolio/
+🔗https://jobayer-ahmed1.github.io/Portfolio/
 
 ## 📌 Features
 
