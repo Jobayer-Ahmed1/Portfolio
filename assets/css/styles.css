@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 /*===== VARIABLES CSS =====*/
 :root {
-  --header-height: 4.7rem;
+  --header-height: 3.6rem;
   --font-semi: 600;
   /*===== Colores =====*/
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
@@ -15,8 +15,8 @@
   --header-bg: rgba(255, 255, 255, 0.95);
   --text-color: hsl(var(--hue-color), 56%, 12%);
   --shadow-color: rgba(14, 36, 49, 0.15);
-  --nav-link-size: 1.1rem;
-  --nav-logo-size: 1.6rem;
+  --nav-link-size: 0.95rem;
+  --nav-logo-size: 1.45rem;
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2.4rem;
@@ -38,8 +38,8 @@ body.dark {
   --header-bg: rgba(15, 23, 42, 0.95);
   --text-color: #f8fafc;
   --shadow-color: rgba(15, 23, 42, 0.4);
-  --nav-link-size: 1.1rem;
-  --nav-logo-size: 1.6rem;
+  --nav-link-size: 0.95rem;
+  --nav-logo-size: 1.45rem;
 }
 
 @media screen and (min-width: 968px) {
@@ -149,7 +149,7 @@ img {
   justify-content: space-between;
   align-items: center;
   font-weight: var(--font-semi);
-  padding: 0.95rem 2rem;
+  padding: 0.7rem 1.5rem;
 }
 
 .nav__logo {
@@ -157,12 +157,13 @@ img {
   font-size: var(--nav-logo-size);
   font-weight: 800;
   white-space: nowrap;
+  line-height: 1;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.35rem;
 }
 
 .nav__item {
@@ -175,42 +176,40 @@ img {
   font-size: var(--nav-link-size);
   font-weight: 600;
   transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.28rem;
+  width: 100%;
+  height: 0.2rem;
+  background: linear-gradient(90deg, var(--first-color), #7dd3fc);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .nav__link:hover {
   color: var(--first-color);
 }
 
-.nav__link:hover::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0.24rem;
-  left: 0;
-  top: 1.95rem;
-  background: linear-gradient(90deg, var(--first-color), #7dd3fc);
-  border-radius: 999px;
+.nav__link:hover::after,
+.active-link::after {
+  transform: scaleX(1);
 }
 
 .active-link {
   color: var(--first-color);
 }
 
-.active-link::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0.24rem;
-  left: 0;
-  top: 1.95rem;
-  background: linear-gradient(90deg, var(--first-color), #7dd3fc);
-  border-radius: 999px;
-}
-
 .nav__item-theme {
   display: flex;
   align-items: center;
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
 }
 
 .theme-toggle {
@@ -218,7 +217,7 @@ img {
   background: transparent;
   color: var(--text-color);
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -250,12 +249,12 @@ img {
 
   .nav__list {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.1rem;
   }
 
   .nav__item-theme {
     margin-left: 0;
-    margin-top: 1rem;
+    margin-top: 0.7rem;
   }
 
   .nav__link::after,
@@ -267,7 +266,7 @@ img {
 .nav__logo {
   color: var(--text-color);
   font-size: var(--nav-logo-size);
-  font-weight: 700;
+  font-weight: 800;
 }
 .nav__toggle {
   color: var(--text-color);
@@ -278,18 +277,6 @@ img {
 
 .nav__toggle:hover {
   transform: scale(1.08);
-}
-
-/*Active menu*/
-.active-link::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0.22rem;
-  left: 0;
-  top: 2rem;
-  background: linear-gradient(90deg, var(--first-color), #7dd3fc);
-  border-radius: 999px;
 }
 
 /*=== Show menu ===*/
