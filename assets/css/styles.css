@@ -1,10 +1,7 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 :root {
   --header-height: 3.4em;
-  --font-semi: 600;
-  
-  
+  --font-semi: 600;  
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 89%, 60%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
@@ -335,7 +332,6 @@ img {
   transform: scale(1.03);
   box-shadow: 0 24px 42px rgba(79, 172, 254, 0.32);
 }
-
 @keyframes floatProfile {
   0%,
   100% {
@@ -532,9 +528,9 @@ img {
   background: rgba(79, 172, 254, 0.12);
   color: var(--first-color);
   border: 1px solid rgba(79, 172, 254, 0.2);
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.8rem;
-  font-size: 0.78rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.72rem;
   font-weight: 600;
 }
 
@@ -549,10 +545,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: 0.8rem 0.9rem;
-  border-radius: 12px;
-  font-size: 0.95rem;
+  min-height: 36px;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
   font-weight: 600;
   color: #fff;
   background: linear-gradient(135deg, var(--first-color), #4facfe);
@@ -561,7 +557,7 @@ img {
 
 .work__btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(79, 172, 254, 0.2);
+  box-shadow: 0 8px 18px rgba(79, 172, 254, 0.2);
 }
 
 .work__btn--secondary {
@@ -581,7 +577,7 @@ img {
   cursor: default;
   background: rgba(148, 163, 184, 0.18);
   color: var(--text-color);
-  border-color: rgba(148, 163, 184, 0.3);
+  border: 2px solid rgba(148, 163, 184, 0.3);
 }
 
 @media screen and (max-width: 900px) {
